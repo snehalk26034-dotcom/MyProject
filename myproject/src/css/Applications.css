@@ -1,0 +1,440 @@
+/* ================================
+   APPLICATIONS PAGE
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.vendor-application-hero {
+  position: relative;
+
+  width: 100%;
+  height: 580px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("&quot;/static/media/application.53333aad102529e20d9b.webp&quot");
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+/* Pink transparent overlay */
+.vendor-application-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(170, 93, 105, 0.55);
+
+  z-index: 1;
+}
+
+/* Text content */
+.vendor-application-content {
+  position: relative;
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1000px;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.vendor-application-content h1 {
+  margin-bottom: 14px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 4vw, 48px);
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.vendor-application-content p {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .vendor-application-hero {
+    height: 420px;
+
+    background-position: center;
+  }
+
+  .vendor-application-content {
+    width: 90%;
+  }
+
+  .vendor-application-content h1 {
+    font-size: 38px;
+  }
+
+  .vendor-application-content p {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .vendor-application-hero {
+    height: 360px;
+  }
+
+  .vendor-application-content h1 {
+    font-size: 31px;
+    margin-bottom: 12px;
+  }
+
+  .vendor-application-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+.applications-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #3d2b25;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* ================================
+   APPLICATION FORM
+================================ */
+
+.application-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 48px 0 44px;
+}
+
+.application-container form {
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 13px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #3e2923;
+  
+  text-align: start;
+}
+
+.form-group label span {
+  margin-left: 2px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+
+  background: #fff;
+
+  color: #333;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input {
+  height: 35px;
+  padding: 6px 10px;
+}
+
+.form-group textarea {
+  height: 90px;
+
+  padding: 10px;
+
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6b4638;
+
+  box-shadow: 0 0 0 2px rgba(107, 70, 56, 0.08);
+}
+
+
+/* ================================
+   SUBMIT BUTTON
+================================ */
+
+.submit-area {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 11px;
+}
+
+.submit-area button {
+  width: 150px;
+  height: 36px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #654538;
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease;
+}
+
+.submit-area button:hover {
+  background: #4d3329;
+  transform: translateY(-1px);
+}
+
+.submit-area button:active {
+  transform: translateY(0);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.application-footer {
+  width: 100%;
+
+  background: #3d4145;
+  color: #ffffff;
+
+  min-height: 190px;
+
+  padding: 32px 10% 18px;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo h2 {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+  font-weight: 900;
+
+  line-height: 0.85;
+  letter-spacing: -2px;
+}
+
+.footer-location {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-right: 10%;
+}
+
+.location-icon {
+  font-size: 27px;
+  line-height: 1;
+}
+
+.footer-location p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.copyright {
+  max-width: 1100px;
+  margin: 35px auto 0;
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+
+  opacity: 0.7;
+}
+
+
+/* ================================
+   SCROLL TOP
+================================ */
+
+.application-scroll-top {
+  position: fixed;
+
+  right: 28px;
+  bottom: 18px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #087de0;
+  color: #ffffff;
+
+  font-size: 28px;
+  line-height: 45px;
+
+  cursor: pointer;
+
+  z-index: 100;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.application-scroll-top:hover {
+  transform: translateY(-4px);
+  background: #066ac0;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1150px) {
+
+  .application-container {
+    width: calc(100% - 60px);
+  }
+
+  .application-footer {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .application-container {
+    width: calc(100% - 35px);
+
+    padding: 35px 0 40px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input {
+    height: 40px;
+  }
+
+  .form-group textarea {
+    height: 110px;
+  }
+
+  .submit-area button {
+    width: 145px;
+  }
+
+  .application-footer {
+    min-height: 230px;
+
+    padding: 35px 25px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 35px;
+  }
+
+  .footer-location {
+    margin-right: 0;
+
+    text-align: center;
+  }
+
+  .copyright {
+    margin-top: 35px;
+  }
+
+  .application-scroll-top {
+    right: 18px;
+    bottom: 18px;
+  }
+}

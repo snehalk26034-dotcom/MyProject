@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/CraftVendors.css';
+import '../css/CraftVendors.css';
 
 const vendors = [
   {
@@ -55,33 +55,6 @@ const vendors = [
     instagram: 'https://www.instagram.com/',
     image:
       'https://website-d45a5.firebaseapp.com/static/media/nm1.2aefd18c21ecf4c983e1.webp',
-  },
-  {
-    id: 7,
-    name: 'Lee Woodworking',
-    type: 'Local Vendor',
-    website: 'https://yoursite.com/',
-    instagram: 'https://www.instagram.com/',
-    image:
-      'https://website-d45a5.firebaseapp.com/static/media/craft1.fa1cd8fee79e2252c899.webp',
-  },
-  {
-    id: 8,
-    name: 'Figueroa Chocolates',
-    type: 'Local Vendor',
-    website: 'https://yoursite.com/',
-    instagram: 'https://www.instagram.com/',
-    image:
-      'https://website-d45a5.firebaseapp.com/static/media/craft2.4012d28cdd103ad59caa.webp',
-  },
-  {
-    id: 9,
-    name: 'Violet Pham',
-    type: 'Local Vendor',
-    website: 'https://yoursite.com/',
-    instagram: 'https://www.instagram.com/',
-    image:
-      'https://website-d45a5.firebaseapp.com/static/media/craft3.9efba2db966317113c52.webp',
   },
 ];
 
