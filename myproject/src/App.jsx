@@ -1,23 +1,18 @@
 import React from "react";
-import Contact from './Components/Contact'
-import Navbar from "./components/Navbar";
-import Applications from "./Components/Applications";
-import CraftVendors from "./Components/CraftVendors";
-import FoodVendors from "./Components/FoodVendors";
+import Navbar from "./Components/Navbar";
+import AppRoutes from "./Routes/AppRoutes";
 import Footer from './Components/Footer'
 import Home from "./Components/Home";
 
+
 const App = () => {
-  return (
-    <div>
-      <Navbar />
-      <Contact />
-      <Applications />
-      <CraftVendors />
-      <FoodVendors />
-      <Home/>
-    </div>
-  );
+    return (
+        <div>
+            <Navbar />
+            <AppRoutes />
+            <Footer />
+        </div>
+    );
 };
 
 export default App;
