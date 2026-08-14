@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Applications from "./Components/Applications";
 import CraftVendors from "./Components/CraftVendors";
 import FoodVendors from "./Components/FoodVendors";
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Applications />
       <CraftVendors />
       <FoodVendors />
+      <Footer />
     </div>
   );
 };
