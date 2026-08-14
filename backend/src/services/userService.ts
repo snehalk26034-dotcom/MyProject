@@ -1,38 +1,113 @@
 import User from "../models/User";
-import type { UserAttributes, UserCreationAttributes } from "../interface/user.interface";
+import {
+  createUserInterface,
+  updateUserInterface,
+} from "../interface/user.interface";
 
-export async function createUser(data: UserCreationAttributes): Promise<User> {
-  return User.create(data);
-}
+class UserService {
+  async createUser(userData: createUserInterface) {
+    const user = await User.create({
+      ...userData,
+    });
 
-export async function getAllUsers(): Promise<User[]> {
-  return User.findAll({
-    order: [["createdAt", "DESC"]],
-  });
-}
-
-export async function getUserById(id: number): Promise<User | null> {
-  return User.findByPk(id);
-}
-
-export async function updateUser(id: number, data: Partial<UserAttributes>): Promise<User | null> {
-  const user = await User.findByPk(id);
-
-  if (!user) {
-    return null;
+    return {
+      success: true,
+      message: "User created successfully",
+      data: user,
+    };
   }
 
-  await user.update(data);
-  return user;
-}
+  async getAllUsers() {
+    const users = await User.findAll({
+      where: {
+        is_deleted: false,
+      },
+    });
 
-export async function deleteUser(id: number): Promise<boolean> {
-  const user = await User.findByPk(id);
+    if (users.length === 0) {
+      return {
+        success: false,
+        message: "No users found",
+      };
+    }
 
-  if (!user) {
-    return false;
+    return {
+      success: true,
+      message: "Users fetched successfully",
+      data: users,
+    };
   }
 
-  await user.destroy();
-  return true;
+  async getUserById(userId: string) {
+    const user = await User.findOne({
+      where: {
+        id: userId,
+        is_deleted: false,
+      },
+    });
+
+    if (!user) {
+      return {
+        success: false,
+        message: "User not found",
+      };
+    }
+
+    return {
+      success: true,
+      message: "User found successfully",
+      data: user,
+    };
+  }
+
+  async updateUser(userId: string, userData: updateUserInterface) {
+    const user = await User.findOne({
+      where: {
+        id: userId,
+        is_deleted: false,
+      },
+    });
+
+    if (!user) {
+      return {
+        success: false,
+        message: "User not found",
+      };
+    }
+
+    await user.update(userData);
+
+    return {
+      success: true,
+      message: "User updated successfully",
+      data: user,
+    };
+  }
+
+  async deleteUser(userId: string) {
+    const user = await User.findOne({
+      where: {
+        id: userId,
+        is_deleted: false,
+      },
+    });
+
+    if (!user) {
+      return {
+        success: false,
+        message: "User not found",
+      };
+    }
+
+    await user.update({
+      is_deleted: true,
+    });
+
+    return {
+      success: true,
+      message: "User deleted successfully",
+    };
+  }
 }
+
+export default new UserService();
