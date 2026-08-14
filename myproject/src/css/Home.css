@@ -1,140 +1,390 @@
-.home {
-  width: 100%;
-  overflow: hidden;
-  color: #251b17;
-  background: #fff;
-  font-family: Georgia, "Times New Roman", serif;
+* {
+    box-sizing: border-box;
 }
 
+.home {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #211a17;
+    background: #fff;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
+    width: 100%;
     height: 580px;
-  min-height: 304px;
-  display: grid;
-  place-items: center;
-  padding: 6px 24px;
-  background:
-    linear-gradient(rgba(37, 47, 119, 0.12), rgba(37, 47, 119, 0.12)),
-    url("/image.png") center 47% / cover no-repeat;
+
+    background-image:
+        linear-gradient(rgba(24, 31, 80, 0.15),
+            rgba(24, 31, 80, 0.15)),
+        url("/image.png");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .hero-overlay {
-  width: min(500px, 100%);
-  min-height: 292px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 40px;
-  text-align: center;
-  color: #fff;
-  background: rgba(16, 22, 57, 0.84);
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
+    width: 430px;
+    min-height: 250px;
 
-.hero-overlay h1,
-.market-section h2,
-.vendor-content h2,
-.market-card h3 {
-  font-weight: 400;
+    background: rgba(16, 22, 57, 0.82);
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .hero-overlay h1 {
-  margin: 0 0 20px;
-  font-size: clamp(2rem, 2.8vw, 2.5rem);
+    color: white;
+    font-size: 38px;
+    font-weight: 400;
+    margin: 0 0 18px;
 }
 
-.hero-overlay p {
-  margin: 0 0 56px;
-  font-size: 1.05rem;
-  font-weight: 700;
+.hero-overlay h3 {
+    color: white;
+    font-size: 16px;
+    margin: 0 0 45px;
+    line-height: 1.5;
 }
 
-.hero-buttons { display: flex; gap: 16px; }
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+}
 
 .primary-btn,
-.outline-btn,
-.learn-btn,
-.apply-btn {
-  min-height: 48px;
-  padding: 0 30px;
-  border-radius: 9px;
-  font: inherit;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+.outline-btn {
+    height: 45px;
+    padding: 0 28px;
+
+    border-radius: 9px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.primary-btn { border: 2px solid #fff; color: #2b211c; background: #fff; }
-.outline-btn, .apply-btn { border: 2px solid #fff; color: #fff; background: transparent; }
-.primary-btn:hover, .outline-btn:hover, .learn-btn:hover, .apply-btn:hover { transform: translateY(-2px); }
-.outline-btn:hover, .apply-btn:hover { color: #382879; background: #fff; }
+.primary-btn {
+    background: white;
+    border: 2px solid white;
+    color: #27211e;
+}
 
-.market-section { padding: 65px 32px 10px; text-align: center; background: #fbfbfb; }
-.market-section h2 { margin: 0; font-size: clamp(1.9rem, 2.3vw, 2.35rem); }
-.market-subtitle { margin: 20px 0 37px; font-size: 1.08rem; color: #594b45; }
+.primary-btn:hover {
+    background: #eee;
+}
+
+.outline-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.outline-btn:hover {
+    background: white;
+    color: #27211e;
+}
+
+/* =========================
+   MARKET SECTION
+========================= */
+
+.market-section {
+    width: 100%;
+    padding: 55px 28px 10px;
+
+    background: #fff;
+    text-align: center;
+}
+
+.market-section h2 {
+    margin: 0;
+
+    font-size: 29px;
+    font-weight: 400;
+    color: #2a201c;
+}
+
+.market-subtitle {
+    margin: 18px 0 30px;
+
+    font-size: 17px;
+    color: #594b45;
+}
+
+/* Cards */
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  width: min(100%, 1300px);
-  margin: 0 auto;
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 27px;
 }
 
-.card-wrapper { display: flex; flex-direction: column; align-items: center; }
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .market-card {
-  width: 100%;
-  min-height: 285px;
-  padding: 16px;
-  background: #fff;
-  border: 1px solid #d5d5d5;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+    width: 100%;
+    height: auto;
+
+    padding: 14px;
+
+    background: #fff;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 13px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+
+    overflow: hidden;
 }
 
-.market-card img { display: block; width: 100%; height: 152px; object-fit: cover; border-radius: 8px; }
-.market-card h3 { margin: 15px 0 16px; font-size: 1.45rem; }
-.market-card p { margin: 0; font-size: 1rem; line-height: 1.55; color: #4d4540; }
+.market-card img {
+    width: 100%;
+    height: 130px;
 
-.learn-btn { width: 190px; min-height: 46px; margin-top: 8px; border: 0; color: #fff; background: #503c31; }
-.learn-btn:hover { background: #34251e; }
+    object-fit: cover;
 
-.vendor-section { margin-top: 0; color: #fff; background: #382879; }
+    border-radius: 8px;
+}
+
+.market-card h3 {
+    margin: 13px 0 12px;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    color: #2b211c;
+}
+
+.market-card p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    color: #4d4540;
+}
+
+.learn-btn {
+    width: 165px;
+    height: 40px;
+
+    margin-top: 7px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #4b372e;
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.learn-btn:hover {
+    background: #30221d;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   BECOME A VENDOR
+========================= */
+
+.vendor-section {
+    width: 100%;
+
+    margin-top: 0;
+
+    background: #382879;
+
+    color: white;
+}
 
 .vendor-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 70px;
-  width: min(100%, 1160px);
-  min-height: 246px;
-  margin: 0 auto;
-  padding: 45px 32px;
+    max-width: 1150px;
+    min-height: 210px;
+
+    margin: 0 auto;
+
+    padding: 40px 25px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
 }
 
-.vendor-content h2 { margin: 0; font-size: clamp(2.35rem, 3.5vw, 3.7rem); color: #fff; }
-.vendor-text p { margin: 0 0 20px; font-size: 1rem; font-weight: 700; line-height: 1.7; }
-.apply-btn { min-height: 48px; padding: 0 20px; }
+.vendor-title h2 {
+    margin: 0;
 
-@media (max-width: 850px) {
-  .cards-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .vendor-content { grid-template-columns: 1fr; gap: 25px; text-align: center; }
+    font-size: 39px;
+    font-weight: 700;
+
+    color: white;
 }
 
-@media (max-width: 580px) {
-  .hero { min-height: 390px; padding: 20px; }
-  .hero-overlay { min-height: 330px; padding: 25px 18px; }
-  .hero-overlay p { margin-bottom: 35px; line-height: 1.5; }
-  .hero-buttons { width: 100%; flex-direction: column; }
-  .primary-btn, .outline-btn { width: 100%; }
-  .market-section { padding: 45px 16px 16px; }
-  .cards-container { grid-template-columns: 1fr; gap: 26px; max-width: 420px; }
-  .vendor-content { padding: 40px 24px; }
+.vendor-text p {
+    margin: 0 0 18px;
+
+    font-size: 15px;
+    line-height: 1.65;
+
+    color: white;
 }
 
-a {
-  all: unset;
-  cursor: pointer;
+.apply-btn {
+    padding: 10px 20px;
+
+    background: transparent;
+    color: white;
+
+    border: 2px solid white;
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.apply-btn:hover {
+    background: white;
+    color: #382879;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero-overlay {
+        width: 400px;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vendor-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .vendor-text {
+        max-width: 650px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        height: 280px;
+    }
+
+    .hero-overlay {
+        width: calc(100% - 35px);
+        min-height: 230px;
+        padding: 20px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 29px;
+    }
+
+    .hero-overlay h3 {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 190px;
+    }
+
+    .primary-btn,
+    .outline-btn {
+        width: 100%;
+    }
+
+    .market-section {
+        padding: 40px 15px 15px;
+    }
+
+    .market-section h2 {
+        font-size: 25px;
+    }
+
+    .market-subtitle {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+
+    .market-card {
+        height: auto;
+        min-height: 245px;
+    }
+
+    .vendor-content {
+        padding: 35px 20px;
+    }
+
+    .vendor-title h2 {
+        font-size: 30px;
+    }
+
+    .vendor-text p {
+        font-size: 14px;
+    }
 }

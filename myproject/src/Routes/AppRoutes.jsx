@@ -6,12 +6,14 @@ import Contact from "../Components/Contact";
 import CraftVendors from "../Components/CraftVendors";
 import FoodVendors from "../Components/FoodVendors";
 import Applications from "../Components/Applications";
+import Home from "../Components/Home";
 
 const AppRoutes = () => (
     <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Event />} />
-        <Route path="/" element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/vendors/craft" element={<CraftVendors />} />
         <Route path="/vendors/food" element={<FoodVendors />} />
         <Route path="/vendors/applications" element={<Applications />} />
