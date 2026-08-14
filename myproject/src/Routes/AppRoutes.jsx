@@ -6,7 +6,6 @@ import Contact from "../Components/Contact";
 import CraftVendors from "../Components/CraftVendors";
 import FoodVendors from "../Components/FoodVendors";
 import Applications from "../Components/Applications";
-import { HiHome } from "react-icons/hi";
 
 const AppRoutes = () => (
     <Routes>
