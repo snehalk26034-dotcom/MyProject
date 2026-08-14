@@ -1,16 +1,16 @@
-import type { FastifyInstance } from "fastify";
-import {
-  createUserHandler,
-  deleteUserHandler,
-  getAllUsersHandler,
-  getUserByIdHandler,
-  updateUserHandler,
-} from "../controllers/userController";
+import { FastifyInstance } from "fastify";
+import userController from "../controllers/userController";
 
-export async function userRoutes(fastify: FastifyInstance): Promise<void> {
-  fastify.post("/api/v1/users/create-user", createUserHandler);
-  fastify.get("/api/v1/users/getAll-user", getAllUsersHandler);
-  fastify.get("/api/v1/users/:id", getUserByIdHandler);
-  fastify.put("/api/v1/users/:id", updateUserHandler);
-  fastify.delete("/api/v1/users/:id", deleteUserHandler);
+async function userRoutes(fastify: FastifyInstance) {
+  fastify.post("/users", userController.createUser);
+
+  fastify.get("/users", userController.getAllUsers);
+
+  fastify.get("/users/:user_id", userController.getUserById);
+
+  fastify.put("/users/:user_id", userController.updateUser);
+
+  fastify.delete("/users/:user_id", userController.deleteUser);
 }
+
+export default userRoutes;

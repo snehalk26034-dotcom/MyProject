@@ -1,113 +1,96 @@
-import type { FastifyReply, FastifyRequest } from "fastify";
+import { FastifyReply, FastifyRequest } from "fastify";
+import UserService from "../services/userService";
 import {
-  createUser,
-  deleteUser,
-  getAllUsers,
-  getUserById,
-  updateUser,
-} from "../services/userService";
-import type { UserAttributes, UserCreationAttributes } from "../interface/user.interface";
+  createUserInterface,
+  updateUserInterface,
+} from "../interface/user.interface";
 
-export const createUserHandler = async (
-  request: FastifyRequest,
-  reply: FastifyReply
-): Promise<void> => {
-  try {
-    const body = request.body as UserCreationAttributes;
+class UserController {
+  async createUser(req: FastifyRequest, reply: FastifyReply) {
+    try {
+      const userData = req.body as createUserInterface;
+      const response = await UserService.createUser(userData);
 
-    const newUser = await createUser(body);
-
-    reply.code(201).send({
-      success: true,
-      message: "User created successfully",
-      data: newUser,
-    });
-  } catch (error: any) {
-    const message = error?.original?.code === "ER_DUP_ENTRY"
-      ? "A user with this email already exists."
-      : "Unable to create user.";
-
-    reply.code(409).send({
-      success: false,
-      message,
-    });
-  }
-};
-
-export const getAllUsersHandler = async (
-  _request: FastifyRequest,
-  reply: FastifyReply
-): Promise<void> => {
-  const users = await getAllUsers();
-
-  reply.send({
-    success: true,
-    data: users,
-  });
-};
-
-export const getUserByIdHandler = async (
-  request: FastifyRequest,
-  reply: FastifyReply
-): Promise<void> => {
-  const { id } = request.params as { id: string };
-  const user = await getUserById(Number(id));
-
-  if (!user) {
-    reply.code(404).send({
-      success: false,
-      message: "User not found",
-    });
-    return;
-  }
-  
-  reply.send({
-    success: true,
-    data: user,
-  });
-};
-
-export const updateUserHandler = async (
-  request: FastifyRequest,
-  reply: FastifyReply
-): Promise<void> => {
-  const { id } = request.params as { id: string };
-  const body = request.body as Partial<UserAttributes>;
-
-  const user = await updateUser(Number(id), body);
-
-  if (!user) {
-    reply.code(404).send({
-      success: false,
-      message: "User not found",
-    });
-    return;
+      return reply.status(201).send(response);
+    } catch (error) {
+      return reply.status(500).send({
+        message: "Internal Server Error",
+        error: (error as Error).message,
+      });
+    }
   }
 
-  reply.send({
-    success: true,
-    message: "User updated successfully",
-    data: user,
-  });
-};
+  async getAllUsers(req: FastifyRequest, reply: FastifyReply) {
+    try {
+      const response = await UserService.getAllUsers();
 
-export const deleteUserHandler = async (
-  request: FastifyRequest,
-  reply: FastifyReply
-): Promise<void> => {
-  const { id } = request.params as { id: string };
-  const deleted = await deleteUser(Number(id));
+      if (!response.success) {
+        return reply.status(404).send(response);
+      }
 
-  if (!deleted) {
-    reply.code(404).send({
-      success: false,
-      message: "User not found",
-    });
-    return;
+      return reply.status(200).send(response);
+    } catch (error) {
+      return reply.status(500).send({
+        message: "Internal Server Error",
+        error: (error as Error).message,
+      });
+    }
   }
 
-  reply.send({
-    success: true,
-    message: "User deleted successfully",
-  });
-};
+  async getUserById(req: FastifyRequest, reply: FastifyReply) {
+    try {
+      const { user_id } = req.params as { user_id: string };
+      const response = await UserService.getUserById(user_id);
+
+      if (!response.success) {
+        return reply.status(404).send(response);
+      }
+
+      return reply.status(200).send(response);
+    } catch (error) {
+      return reply.status(500).send({
+        message: "Internal Server Error",
+        error: (error as Error).message,
+      });
+    }
+  }
+
+  async updateUser(req: FastifyRequest, reply: FastifyReply) {
+    try {
+      const { user_id } = req.params as { user_id: string };
+      const userData = req.body as updateUserInterface;
+      const response = await UserService.updateUser(user_id, userData);
+
+      if (!response.success) {
+        return reply.status(404).send(response);
+      }
+
+      return reply.status(200).send(response);
+    } catch (error) {
+      return reply.status(500).send({
+        message: "Internal Server Error",
+        error: (error as Error).message,
+      });
+    }
+  }
+
+  async deleteUser(req: FastifyRequest, reply: FastifyReply) {
+    try {
+      const { user_id } = req.params as { user_id: string };
+      const response = await UserService.deleteUser(user_id);
+
+      if (!response.success) {
+        return reply.status(404).send(response);
+      }
+
+      return reply.status(200).send(response);
+    } catch (error) {
+      return reply.status(500).send({
+        message: "Internal Server Error",
+        error: (error as Error).message,
+      });
+    }
+  }
+}
+
+export default new UserController();
