@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="navbar-right">
                 <ul className="nav-links">
                     <li>
-                        <Link to="/" className="active">
+                        <Link to="" className="active">
                             Home
                         </Link>
                     </li>
@@ -66,13 +66,13 @@ const Navbar = () => {
                     </li>
 
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/">Contact</Link>
                     </li>
                 </ul>
 
-                <Link to="/tickets" className="ticket-btn">
+                <a href="https://www.eventbrite.com/" target="_blank" rel="noopener noreferrer" className="ticket-btn">
                     Buy Tickets
-                </Link>
+                </a>
 
                 <div className="social-links">
                     <a href="#" aria-label="Facebook">

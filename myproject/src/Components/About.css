@@ -1,0 +1,88 @@
+.main {
+    height: 500px;
+    color: white;
+    background: url("https://images.unsplash.com/photo-1624555130296-e551faf8969b?q=80&w=1421&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover;
+}
+
+.text {
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 200px;
+}
+
+.images {
+    border-radius: 25px;
+}
+
+.myFont {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 27px;
+    font-size: 17px;
+}
+
+
+.brownBtn {
+    background-color: #3B2E27;
+    color: white;
+    border: none;
+    width: 200px;
+    padding: 13px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+
+
+.multi {
+    background-color: purple;
+    margin-top: 50px;
+    padding: auto;
+}
+
+
+
+
+
+.follow {
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    margin: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+.product {
+    width: 190px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+
+
+.img-fluid {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.img-fluid:hover {
+    transform: scale(1.03);
+}
+
+.img-fluid:active {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(59, 46, 39, 0.4) !important;
+}
+
+.product:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(59, 46, 39, 0.4) !important;
+}
+
