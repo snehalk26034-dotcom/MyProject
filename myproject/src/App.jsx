@@ -6,8 +6,8 @@ import Applications from "./Components/Applications";
 function App() {
   return (
     <div>
-        {/* <CraftVendors /> */}
-        {/* <FoodVendors/> */}
+        <CraftVendors />
+        <FoodVendors/>
         <Applications/>
     </div>
   );
