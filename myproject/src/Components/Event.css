@@ -46,7 +46,7 @@ body {
 }
 
 .event-content h1 {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 48px;
   font-weight: bold;
 
@@ -86,7 +86,7 @@ body {
   display: flex;
   gap: 20px;
   padding: 40px 20px;
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .event-card {
@@ -94,7 +94,7 @@ body {
   min-height: 175px;
   padding: 20px;
   text-align: center;
-  background-color: white;
+  background-color: rgb(255, 254, 254);
   border-radius: 10px;
 
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
@@ -110,12 +110,12 @@ body {
 
 .event-card p {
   margin: 10px 0;
-  color: #333;
+  color: #000000;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 17px;
 }
 
-/* Mobile Responsive */
+
 @media (max-width: 768px) {
   .event-container {
     flex-direction: column;
