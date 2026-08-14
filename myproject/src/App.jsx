@@ -6,9 +6,8 @@ import Applications from "./Components/Applications";
 function App() {
   return (
     <div>
-        <CraftVendors />
-        <FoodVendors/>
-        <Applications/>
+    
+     
     </div>
   );
 }
