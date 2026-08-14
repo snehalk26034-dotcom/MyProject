@@ -1,8 +1,4 @@
 import React from "react";
-import CraftVendors from "./Components/CraftVendors";
-import FoodVendors from "./Components/FoodVendors";
-import Applications from "./Components/Applications";
-
 function App() {
   return (
     <div>
@@ -11,5 +7,21 @@ function App() {
     </div>
   );
 }
+
+export default App;
+
+import Navbar from "./components/Navbar";
+
+const App = () => {
+    return (
+
+        <div>
+            <Navbar />
+
+        </div>
+
+
+    );
+};
 
 export default App;
