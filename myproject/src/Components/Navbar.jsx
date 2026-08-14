@@ -1,70 +1,78 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
+
 const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <img src={logo} alt="Kiran Dighe" />
+                <Link to="/">
+                    <img src={logo} alt="Kiran Dighe" />
+                </Link>
             </div>
 
             <div className="navbar-right">
                 <ul className="nav-links">
                     <li>
-                        <a href="/" className="active">
+                        <Link to="/" className="active">
                             Home
-                        </a>
+                        </Link>
                     </li>
+
                     <li>
-                        <a href="/about">About</a>
+                        <Link to="/about">About</Link>
                     </li>
+
                     <li className="dropdown">
-                        <a href="/vendors" className="dropdown-link">
+                        <Link to="/vendors" className="dropdown-link">
                             Vendors
-                        </a>
+                        </Link>
 
                         <ul className="dropdown-menu">
                             <li>
-                                <a href="/vendors/craft">
+                                <Link to="/vendors/craft">
                                     <span>○</span>
                                     <span>
                                         Craft
                                         <br />
                                         Vendors
                                     </span>
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a href="/vendors/food">
+                                <Link to="/vendors/food">
                                     <span>○</span>
                                     <span>
                                         Food
                                         <br />
                                         Vendors
                                     </span>
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a href="/vendors/applications">
+                                <Link to="/vendors/applications">
                                     <span>○</span>
                                     <span>Applications</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </li>
+
                     <li>
-                        <a href="/events">Events</a>
+                        <Link to="/events">Events</Link>
                     </li>
+
                     <li>
-                        <a href="/contact">Contact</a>
+                        <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
 
-                <a href="/tickets" className="ticket-btn">
+                <Link to="/tickets" className="ticket-btn">
                     Buy Tickets
-                </a>
+                </Link>
 
                 <div className="social-links">
                     <a href="#" aria-label="Facebook">

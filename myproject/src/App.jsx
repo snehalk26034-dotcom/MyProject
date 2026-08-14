@@ -1,16 +1,18 @@
-import Navbar from './Components/Navbar';
+import React from "react";
 import Contact from './Components/Contact'
-import './App.css';
+import Navbar from "./components/Navbar";
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
+
+        <div>
             <Contact />
             <Navbar />
 
-
         </div>
+
+
     );
-}
+};
 
 export default App;
