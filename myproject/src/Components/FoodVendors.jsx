@@ -88,7 +88,7 @@ const FoodVendors = () => {
           Discover our wonderful food vendors and explore the delicious
           flavors they bring to every event.
         </p>
-      </header>
+      </header> <br /> <br/>
 
       {/* VENDORS */}
       <section className="vendors-section">

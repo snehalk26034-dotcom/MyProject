@@ -61,6 +61,14 @@ const vendors = [
 function CraftVendors() {
   return (
     <main className="craft-vendors-page">
+      
+      {/* Craft Vendors Header */}
+      <header className="craft-vendors-header">
+        <div className="craft-vendors-content">
+          <h1>Vendors</h1>
+         </div>
+      </header>
+      <br /> <br />
 
       {/* Vendor Information */}
       <section className="vendors-section">
@@ -92,7 +100,7 @@ function CraftVendors() {
               </div>
             </div>
           ))}
-        </div>
+        </div><br /> <br />
 
         {/* Image Gallery */}
         <div className="vendors-gallery-grid">
