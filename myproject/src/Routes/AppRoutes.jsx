@@ -1,12 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-
+import Home from "../Components/Home"
 import About from "../Components/About";
 import Event from "../Components/Event";
 import Contact from "../Components/Contact";
 import CraftVendors from "../Components/CraftVendors";
 import FoodVendors from "../Components/FoodVendors";
 import Applications from "../Components/Applications";
-import Home from "../Components/Home";
 
 const AppRoutes = () => (
     <Routes>
