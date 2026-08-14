@@ -1,12 +1,27 @@
-import React from 'react'
+import React from "react";
+import Contact from './Components/Contact'
+import Navbar from "./components/Navbar";
 import About from './Components/About'
+import Event from "./Components/Event";
+import Applications from "./Components/Applications";
+import CraftVendors from "./Components/CraftVendors";
+import FoodVendors from "./Components/FoodVendors";
+import Footer from './Components/Footer'
 
-function App() {
+const App = () => {
     return (
-        <div>
-            <About />
-        </div>
-    )
-}
 
-export default App
+        <div>
+            <Navbar />
+            <Contact />
+            <Event />
+            <About />
+            <Applications />
+            <CraftVendors />
+            <FoodVendors />
+            <Footer />
+        </div>
+    );
+};
+
+export default App;
