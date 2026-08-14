@@ -61,12 +61,11 @@ const Contact = () => {
       <button type="submit" className="button1">Submit</button>
 
       <div className="map">
-        <iframe
-          src="https://www.google.com/maps?q=Selu,Maharashtra&output=embed"
-          title="Selu Maharashtra Map"
-          loading="lazy"
-        >
-        </iframe>
+         <iframe
+            title="Map"
+            src="https://www.google.com/maps?q=19.4680322,76.4473516&output=embed"
+            className="w-full h-full border-0"
+            loading="lazy"/>
       </div>
 
     </div>
