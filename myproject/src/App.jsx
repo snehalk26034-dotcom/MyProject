@@ -1,6 +1,7 @@
 import React from "react";
 import Contact from './Components/Contact'
 import Navbar from "./components/Navbar";
+import Event from "./Components/Event";
 import Applications from "./Components/Applications";
 import CraftVendors from "./Components/CraftVendors";
 import FoodVendors from "./Components/FoodVendors";
@@ -12,6 +13,7 @@ const App = () => {
     <div>
       <Navbar />
       <Contact />
+      <Event />
       <Applications />
       <CraftVendors />
       <FoodVendors />
