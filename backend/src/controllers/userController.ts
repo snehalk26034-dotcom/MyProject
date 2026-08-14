@@ -60,7 +60,7 @@ export const getUserByIdHandler = async (
     });
     return;
   }
-
+  
   reply.send({
     success: true,
     data: user,
