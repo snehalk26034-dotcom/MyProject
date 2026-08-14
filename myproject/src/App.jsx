@@ -4,7 +4,7 @@ import Event from './Components/Event'
 function App() {
   return (
     <div>
-    <Event/>
+  
     </div>
   )
 }
