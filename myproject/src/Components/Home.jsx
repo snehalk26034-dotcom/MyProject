@@ -1,3 +1,4 @@
+import React from "react";
 import "../css/Home.css";
 
 const cards = [
@@ -9,7 +10,8 @@ const cards = [
   },
   {
     title: "Local Food Trucks",
-    image: "/image (5).png",
+    image:
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80",
     text: "Savor meals and snacks from our diverse selection of local food trucks.",
   },
   {
@@ -20,54 +22,79 @@ const cards = [
   },
 ];
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="home">
-      <section className="hero" aria-labelledby="event-title">
+    <div className="home">
+
+      {/* Hero Section */}
+      <section className="hero">
         <div className="hero-overlay">
-          <h1 id="event-title">Themeland Night</h1>
-          <p>Open Every Weekend from March 1 to 31, 2025</p>
+          <h1>Themeland Night</h1>
+
+          <h3>
+            Open Every Weekend from March 1 to 31, 2025
+          </h3>
+
           <div className="hero-buttons">
-            <button className="primary-btn" type="button"> <a href="https://www.eventbrite.com/"> GET TICKETS </a> </button>
-            <button className="outline-btn" type="button"> <a href="#"> LEARN MORE</a> </button>
+            <button className="primary-btn">GET TICKETS</button>
+            <button className="outline-btn">LEARN MORE</button>
           </div>
         </div>
       </section>
 
+      {/* Local Craft Market */}
+      <section className="market-section">
+        <h2>A Local Craft Market</h2>
 
-
-      <section className="market-section" aria-labelledby="market-title">
-        <h2 id="market-title">A Local Craft Market</h2>
         <p className="market-subtitle">
           Explore the finest local crafts and specialty items in Maryland.
         </p>
 
         <div className="cards-container">
           {cards.map((card) => (
-            <article className="card-wrapper" key={card.title}>
+            <div className="card-wrapper" key={card.title}>
               <div className="market-card">
                 <img src={card.image} alt={card.title} />
+
                 <h3>{card.title}</h3>
+
                 <p>{card.text}</p>
-                 <button className="learn-btn" type="button" > <a href=""> LEARN MORE </a></button>
+                 <button className="learn-btn">
+                LEARN MORE
+              </button>
+              
               </div>
+
              
-            </article>
+            </div>
           ))}
         </div>
-      </section><br /> <br/> <br/> <br/>
+      </section>
 
-      <section className="vendor-section" aria-labelledby="vendor-title">
+      {/* Become Vendor */}
+      <section className="vendor-section">
         <div className="vendor-content">
-          <h2 id="vendor-title">Become A Vendor</h2>
+          <div className="vendor-title">
+            <h2>Become A Vendor</h2>
+          </div>
+
           <div className="vendor-text">
             <p>
-              Apply to be part of our next event! This is a paragraph. You can write your own content here, and fill in the blanks. What's your story and where do you go from here? Tell the world about your business, and make this text yours.
+              Apply to be part of our next event! This is a paragraph.
+              You can write your own content here, and fill in the blanks.
+              What's your story and where do you go from here? Tell the
+              world about your business, and make this text yours.
             </p>
-            <button className="apply-btn" type="button">Apply Now</button>
+
+            <button className="apply-btn">
+              Apply Now
+            </button>
           </div>
         </div>
       </section>
-    </main>
+
+    </div>
   );
-}
+};
+
+export default Home;

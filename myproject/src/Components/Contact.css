@@ -43,15 +43,29 @@
     font-size: 17px;
 }
 
+.contact-form {
+    margin: 30px 10% 0;
+}
+
+.form-field {
+    margin-top: 30px;
+}
+
+.form-field label {
+    display: inline-block;
+    margin-bottom: 8px;
+}
 
 .inp {
-    width: 85%;
+    width: 95%;
     padding: 20px;
 }
 
 .inp_last {
-    width: 80%;
-    padding: 50px;
+    width: 95%;
+    min-height: 160px;
+    padding: 20px;
+    resize: vertical;
 }
 
 .button1 {
@@ -61,11 +75,28 @@
     color: #fff;
     cursor: pointer;
     font-size: 1.2rem;
-    margin: 0;
     padding: 12px 80px;
     transition: .3s ease-in-out;
     margin-top: 15px;
-    margin-left: 42%;
+}
+
+.button1:disabled {
+    cursor: wait;
+    opacity: .7;
+}
+
+.form-status {
+    width: 95%;
+    margin: 16px 0 0;
+    font-weight: 600;
+}
+
+.form-status.success {
+    color: #1f6b36;
+}
+
+.form-status.error {
+    color: #a32121;
 }
 
 .map{

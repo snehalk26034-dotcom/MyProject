@@ -4,17 +4,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const sequelize = new Sequelize(
-    (process.env.DB_NAME ?? "").trim(),
-    (process.env.DB_USER ?? "").trim(),
-    (process.env.DB_PASSWORD ?? "").trim(),
+    process.env.DB_NAME as string,
+    process.env.DB_USER as string,
+    process.env.DB_PASSWORD,
     {
-        host: (process.env.DB_HOST ?? "localhost").trim(),
+        host: process.env.DB_HOST,
         dialect: "mysql",
-        port: Number((process.env.DB_PORT ?? "3306").trim()),
-        logging: false,
-        dialectOptions: {
-            connectTimeout: 2000,
-        },
+        port: Number(process.env.DB_PORT),
+        logging: false
     }
 );
 
